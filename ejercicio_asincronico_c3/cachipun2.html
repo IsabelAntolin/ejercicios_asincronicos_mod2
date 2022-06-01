@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        
+        let desea_jugar = parseInt(prompt('Desea Jugar\nSi: Seleccione 1 \nNo: Seleccione 2'));   
+
+        while (desea_jugar < 2) {
+            //almacena la cantidad de veces que desea jugar
+            const cant_jugadas = parseInt(prompt('¿Cuántas Veces Deseas Jugar?'));
+            let contador = 1;
+            //contador de puntaje
+            let pt_jugador = 0;
+            let pt_computador = 0;
+
+            while (contador <= cant_jugadas) {
+                //almacenar opción (Piedra,Papel,Tijera)
+                const opcion_jugador = parseInt(prompt('Ingrese que desea jugar\n 1:Piedra\n 2:Papel\n 3:Tijeras'));
+                //Generar numero al azar
+                const azar = Math.random() * 3;
+
+                //jugadas que le tocan al computador
+                let computador;
+                if (azar < 1) {
+                    computador = 1; //Piedra
+                }
+                else if (azar < 2) {
+                    computador = 2; //Papel
+                }
+                else {
+                    computador = 3;//Tijera
+                }
+
+                //________________Escenarios posibles_________________________________________
+                //Jugador elige Piedra
+                if (opcion_jugador == 1) {
+                    if (computador == 1) {
+                        alert('Jugadores empatan con Piedra');
+                    }
+                    else if (computador == 2) {
+                        alert('Jugador pierde con piedra, Computador gana con Papel');
+                        pt_computador++;
+                    }
+                    else {
+                        alert('Jugador gana con Piedra, Computador pierde con Tijeras');
+                        pt_jugador++
+                    }
+
+                }
+                //Jugador elige Papel
+                else if (opcion_jugador == 2) {
+                    if (computador == 1) {
+                        alert('Jugador gana con Papel, Computador pierde con Piedra ');
+                        pt_jugador++
+                    }
+                    else if (computador == 2) {
+                        alert('Jugadores empatan con Papel');
+                    }
+                    else {
+                        alert('Jugador Pierda con papel, Computador gana con Tijeras');
+                        pt_computador++
+                    }
+                }
+                //Jugador elige Tijeras
+                else {
+                    if (computador == 1) {
+                        alert('Jugador pierde con Tijeras, Computador gana con Piedra');
+                        pt_computador++
+                    }
+                    else if (computador == 2) {
+                        alert('Jugador Gana con Tijeras, Computador pierde con Papel');
+                        pt_jugador++
+                    }
+                    else {
+                        alert('Jugadores empatan con Tijeras');
+                    }
+                }
+                contador++;                
+            }
+            
+            
+            alert('Puntajes \n Jugador: ' + pt_jugador + '\n Computador: ' + pt_computador);
+            
+            let desea_jugar = parseInt(prompt('Desea volver a Jugar\nSi: Seleccione 1 \nNo: Seleccione 2'));            
+            if (desea_jugar == 2) {
+                break;
+            }
+        }
+
+
+       
+
+
+
+    </script>
+</body>
+
+</html>
