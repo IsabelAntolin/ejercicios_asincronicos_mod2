@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //  let arrayPeliculas =['moana','increibles','mi villano favorito','shrek','sonic'];
+
+    function peliculas() {
+      let arrayPeliculas = [
+        { titulo: 'moana', rating: 3, loHasVisto: true },
+        { titulo: 'shrek', rating: 5, loHasVisto: true },
+        { titulo: 'sonic', rating: 0, loHasVisto: false },
+        { titulo: 'la bella y la bestia', rating: 0, loHasVisto: true }
+      ]
+
+      // for (i = 0; i < arrayPeliculas.length; i++) {
+      //   if (arrayPeliculas[i].loHasVisto == true) {
+      //     console.log('Viste "' + arrayPeliculas[i].titulo + '" - ' + arrayPeliculas[i].rating + ' estrellas');
+      //   }
+      //   else {
+      //     console.log('No Viste "' + arrayPeliculas[i].titulo + '" - ' + arrayPeliculas[i].rating + ' estrellas');
+      //   }
+      // }
+
+      for(let pelicula of arrayPeliculas){
+        if (pelicula.loHasVisto == true) {
+          console.log('Viste "' + pelicula.titulo + '" - ' + pelicula.rating + ' estrellas');
+        }
+        else {
+          console.log('No Viste "' + pelicula.titulo + '" - ' + pelicula.rating + ' estrellas');
+        }
+      }
+    }
+
+
+
+    function arregloObjetos(numero, palabra){  
+      let arrayObjeto=[];
+     
+      for(i=1;i <= numero; i++){
+        const objeto = {}
+        objeto[palabra] = i
+        arrayObjeto.push(objeto);
+      }
+     return arrayObjeto
+    }
+     
+
+
+
+
+  </script>
+</body>
+
+</html>
