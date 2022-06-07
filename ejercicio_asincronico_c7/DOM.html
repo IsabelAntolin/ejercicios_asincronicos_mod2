@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+    .square {
+      width: 200px;
+      height: 150px;
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- parte 1 -->
+  <h1>Título</h1>
+
+  <!-- parte 2 -->
+  <div id="divi">
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // cambiá el texto del título
+    let h1_titulo = document.querySelector('h1');
+    h1_titulo.textContent = 'Título de Cambio';
+    //_______________________________________________________________________________________________
+    //cambiá el título por un párrafo con un texto a elección
+    h1_titulo.innerHTML = '<p>párrafo a elección</p>'
+    //_______________________________________________________________________________________________
+    //agregá otro párrafo al <body> con un texto a elección.
+    const parrafoNuevo = document.createElement('p'); // crear etiqueta    
+    parrafoNuevo.innerHTML = 'Párrafo Agregado en el Body'; //le doy contenido a la etiqueta
+
+    const etiqueta_body = document.querySelector('body'); // traemos a la etiqueta madre
+    etiqueta_body.appendChild(parrafoNuevo); //Agregamos la etiqueta
+    //_______________________________________________________________________________________________
+    //parte 2
+    const etiqueta_div = document.querySelector('#divi');
+    //  etiqueta_div.style.width='200px';
+    //  etiqueta_div.style.height ='150px';
+    //  etiqueta_div.style['background-color']='blueviolet';
+
+    etiqueta_div.classList.add('square');
+    //_______________________________________________________________________________________________
+    //etiqueta_div.classList.remove('square');    
+    //_______________________________________________________________________________________________
+    // Hacé una Función que cada un segundo (setInterval()) se fije si tiene la clase .square. Si la tiene, que se la quite; si no la tiene, que se la agregue.
+    let intervalo;
+
+    function activarDesactivarClase() {
+      intervalo = setInterval(function () { etiqueta_div.classList.toggle('square') }, 1000);
+    }
+
+    function detenerIntervalo() {
+      clearInterval(intervalo);
+    }
+
+
+  </script>
+</body>
+
+</html>
